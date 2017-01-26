@@ -1,0 +1,18 @@
+# Connect-4
+my connect-4 project
+
+
+def initializeGrid(x,y):                  
+        rows = ['X'] * x
+        i = 0
+        grid = ['X'] * y
+        while i < y:
+                grid[i] = rows
+                i=i+1
+        return grid
+    
+def drawGrid(grid):
+        for element in grid:
+                print (element)
+        for i in range (x):
+            print (i + 1)
