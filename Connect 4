@@ -9,6 +9,7 @@ grid2 = [0,0,0,0]
 grid3 = [0,0,0,0]
 grid4 = [0,0,0,0]
 # here, i just set each grid equal to 0000 to start the game off
+
 grids = [grid1,grid2,grid3,grid4]
 
 check = []
@@ -24,6 +25,7 @@ def hasWon_def():
 def grid_def():
     print ("",grid4,"\n",grid3,"\n",grid2,"\n",grid1)
 # this function prints the grid for the game to start
+
 def user_def():
     global user
     if user < 2:
@@ -32,6 +34,7 @@ def user_def():
         user = 1
     return user
 #this function puts user equal to 2 if its less than two 
+
 def slotFull_def():
    while True:
         try:
@@ -43,6 +46,7 @@ def slotFull_def():
             print ("slot is full try again")
             confirm_def()
 # this function says that if user puts in a slot that is full, it'll print Slot is full try again.
+
 def confirm_def():
     loop= True
     while loop== True:
@@ -56,6 +60,7 @@ def confirm_def():
         except ValueError:
             print ("invalid input")
 # this function says if the user inputs in a slot that is non-existent, then it will print invalid input
+
 def placement_def():
     counter = 0
     for i in range (0,4):
@@ -90,6 +95,7 @@ def check_def():
         else:
             check = []
 # this function creates a loop on the two players to check if they have won 
+
 def checkEmpty_def():
     global check
     for i in range (0,4):
@@ -98,11 +104,13 @@ def checkEmpty_def():
     if 0 not in check:
         print ("full")
 # this function tells the player if the coloum is full
+
 def checks_def():
     check_def()
     checkEmpty_def()
     diagcheck_def()
 #this function just checks constantly to see if the players have won yet
+
 def diagcheck_def():
     global loop
     global check
