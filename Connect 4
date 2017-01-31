@@ -8,7 +8,7 @@ grid1 = [0,0,0,0]
 grid2 = [0,0,0,0]
 grid3 = [0,0,0,0]
 grid4 = [0,0,0,0]
-
+# here, i just set each grid equal to 0000 to start the game off
 grids = [grid1,grid2,grid3,grid4]
 
 check = []
@@ -20,10 +20,10 @@ class fullSlot_error (Exception):
 def hasWon_def():
     print ("player "+str(user)+" has won")
     time.sleep (1)
-
+#this class prints out what player won
 def grid_def():
     print ("",grid4,"\n",grid3,"\n",grid2,"\n",grid1)
-
+# this function prints the grid for the game to start
 def user_def():
     global user
     if user < 2:
@@ -31,7 +31,7 @@ def user_def():
     else:
         user = 1
     return user
-
+#this function puts user equal to 2 if its less than two 
 def slotFull_def():
    while True:
         try:
@@ -42,7 +42,7 @@ def slotFull_def():
         except fullSlot_error:
             print ("slot is full try again")
             confirm_def()
-
+# this function says that if user puts in a slot that is full, it'll print Slot is full try again.
 def confirm_def():
     loop= True
     while loop== True:
@@ -55,7 +55,7 @@ def confirm_def():
                 print ("invalid int")
         except ValueError:
             print ("invalid input")
-
+# this function says if the user inputs in a slot that is non-existent, then it will print invalid input
 def placement_def():
     counter = 0
     for i in range (0,4):
@@ -64,7 +64,7 @@ def placement_def():
             grids [i][userInput - 1] = int(user)
             grid_def()
             break
-
+#this function says that it should input what the user types in the grid if it is not taken or nonexistent
 
 def check_def():
     global loop
@@ -89,7 +89,7 @@ def check_def():
             break
         else:
             check = []
-
+# this function creates a loop on the two players to check if they have won 
 def checkEmpty_def():
     global check
     for i in range (0,4):
@@ -97,12 +97,12 @@ def checkEmpty_def():
             check.append(grids[i][a])
     if 0 not in check:
         print ("full")
-
+# this function tells the player if the coloum is full
 def checks_def():
     check_def()
     checkEmpty_def()
     diagcheck_def()
-
+#this function just checks constantly to see if the players have won yet
 def diagcheck_def():
     global loop
     global check
@@ -126,7 +126,7 @@ def diagcheck_def():
             loop = False
             return loop
             break
-
+# this function checks if they have won 4 diagonally for both players
 
 loop = True
 
